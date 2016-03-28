@@ -8,3 +8,4 @@
 (load-file "~/.emacs.d/smartparens.el")
 (load-file "~/.emacs.d/beep.el")
 (load-file "~/.emacs.d/haskell.el")
+(load-file "~/.emacs.d/purescript.el")
