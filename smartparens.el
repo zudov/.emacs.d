@@ -1,44 +1,32 @@
-(ensure-package-installed 'smartparens)
-(require 'smartparens-config)
+(use-package smartparens
+  :ensure t
+  :init (progn
+	  (add-hook 'lisp-mode-hook       #'smartparens-mode)
+	  (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
+	  (add-hook 'clojure-mode-hook    #'smartparens-mode)
+	  (add-hook 'cider-repl-mode-hook #'smartparens-mode)
+	  (add-hook 'haskell-mode-hook    #'smartparens-mode))
+  :config (require 'smartparens-config)
+  :bind (:map smartparens-mode-map
+	      ("C-M-f" . sp-forward-sexp)
+	      ("C-M-b" . sp-backward-sexp)
+	      
+	      ("C-M-d" . sp-down-sexp)
+	      ("C-M-a" . sp-backward-down-sexp)
+	      ("C-S-d" . sp-beginning-of-sexp)
+	      ("C-S-a" . sp-end-of-sexp)
+	      
+	      ("C-M-e" . sp-up-sexp)
+	      ("C-M-u" . sp-backward-up-sexp)
+	      ("C-M-t" . sp-transpose-sexp)
 
-(add-hook 'lisp-mode-hook       #'smartparens-mode)
-(add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
-(add-hook 'clojure-mode-hook    #'smartparens-mode)
-(add-hook 'cider-repl-mode-hook #'smartparens-mode)
-(add-hook 'haskell-mode-hook    #'smartparens-mode)
+	      ("C-M-n" . sp-next-sexp)
+	      ("C-M-p" . sp-previous-sexp)
 
+	      ("C-M-k" . sp-kill-sexp)
+	      ("C-M-w" . sp-copy-sexp)
 
-(eval-after-load 'smartparens-mode
-  (progn
-    (define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-b") 'sp-backward-sexp)
-
-    (define-key smartparens-mode-map (kbd "C-M-d") 'sp-down-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
-    (define-key smartparens-mode-map (kbd "C-S-d") 'sp-beginning-of-sexp)
-    (define-key smartparens-mode-map (kbd "C-S-a") 'sp-end-of-sexp)
-
-    (define-key smartparens-mode-map (kbd "C-M-e") 'sp-up-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
-
-    (define-key smartparens-mode-map (kbd "C-M-n") 'sp-next-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-p") 'sp-previous-sexp)
-
-    (define-key smartparens-mode-map (kbd "C-M-k") 'sp-kill-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-w") 'sp-copy-sexp)
-
-    (define-key smartparens-mode-map (kbd "M-<delete>")   'sp-unwrap-sexp)
-    (define-key smartparens-mode-map (kbd "M-<backspace>") 'sp-backward-unwrap-sexp)
-
-    (define-key smartparens-mode-map (kbd "C-<right>")   'sp-forward-slurp-sexp)
-    (define-key smartparens-mode-map (kbd "C-<left>")    'sp-forward-barf-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-<left>")  'sp-backward-slurp-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-<right>") 'sp-backward-barf-sexp)
-
-    (define-key smartparens-mode-map (kbd "M-S-d")           'sp-splice-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-<delete>")    'sp-splice-sexp-killing-forward)
-    (define-key smartparens-mode-map (kbd "C-M-<backspace>") 'sp-splice-sexp-killing-backward)
-    (define-key smartparens-mode-map (kbd "C-S-<backspace>") 'sp-splice-sexp-killing-around)))
+	      ("M-<delete>" . sp-unwrap-sexp)
+	      ("M-<backspace>" . sp-backward-unwrap-sexp)))
 
 

@@ -1,3 +1,7 @@
-(ensure-package-installed
- 'purescript-mode
- 'psc-ide)
+(use-package purescript-mode
+  :ensure t
+  :pin emacs-pe)
+
+(use-package psci
+  :ensure t
+  :pin emacs-pe)

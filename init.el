@@ -1,4 +1,3 @@
-
 (load-file "~/.emacs.d/package-management.el")
 (load-file "~/.emacs.d/common.el")
 (load-file "~/.emacs.d/util.el")
@@ -10,3 +9,4 @@
 (load-file "~/.emacs.d/haskell.el")
 (load-file "~/.emacs.d/magit.el")
 (load-file "~/.emacs.d/purescript.el")
+(load-file "~/.emacs.d/org.el")
