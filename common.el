@@ -30,3 +30,5 @@
   :config
   (setq aw-keys '(?u ?h ?e ?t ?o ?n ?a ?s)))
 
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "firefox-developer")
