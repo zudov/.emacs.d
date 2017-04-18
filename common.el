@@ -28,7 +28,8 @@
   :bind
   ("C-." . ace-window)
   :config
-  (setq aw-keys '(?u ?h ?e ?t ?o ?n ?a ?s)))
+  (setq aw-keys '(?u ?h ?e ?t ?o ?n ?a ?s))
+  (setq aw-background nil))
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "firefox-developer")
