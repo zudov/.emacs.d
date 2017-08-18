@@ -9,6 +9,6 @@
 (use-package psc-ide
   :ensure t
   :init (progn
-	  (add-hook 'purescript-mode-hook 'psc-ide)
+	  (add-hook 'purescript-mode-hook 'psc-ide-mode)
 	  (add-hook 'purescript-mode-hook 'company-mode)
 	  (add-hook 'purescirpt-mode-hook 'flycheck-mode)))
