@@ -1,5 +1,5 @@
-(add-to-list 'default-frame-alist '(font . "Pragmata Pro"))
-(set-frame-font "Pragmata Pro")
+(add-to-list 'default-frame-alist '(font . "Iosevka"))
+(set-frame-font "Iosevka")
 
 (use-package solarized-theme
   :ensure t
